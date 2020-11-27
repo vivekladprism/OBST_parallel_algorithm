@@ -15,11 +15,13 @@ Running on cmd :
 5) Output -
 
 ==== Calculating Time for Searial OBST Algorithm ====
- The optimal cost for BST is = 643276.3722560313
+
+The optimal cost for BST is = 643276.3722560313
 Time Taken by Serial OBST Algorithm = 6714 milliseconds
 
 ==== Calculating Time for Parallel OBST Algorithm ====
- The optimal cost for BST is = 643276.3722560313
+
+The optimal cost for BST is = 643276.3722560313
 Time Taken by Parallel OBST Algorithm = 3346 milliseconds
 
 
