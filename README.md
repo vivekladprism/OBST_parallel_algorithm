@@ -28,9 +28,14 @@ Time Taken by Parallel OBST Algorithm = 3346 milliseconds
 
 
 6) Prompted with following options:
+
 Press 0 to view Frequency Array
+
 Press 1 to view Access Probabilities array
+
 Press 2 to view DP matrix used to compute the optimal BST
+
 Press 3 to print level order traversal of OBST
+
 Press 4 to exit
 
