@@ -99,6 +99,13 @@ public class OBST_Parallel extends Thread {
 		}
 	}
 	
+	/*
+		Generates random frequencies for each node which represent the 
+		amount of time the node is being searched in the BST.
+		Access probability is calculated by dividing frequency of each
+		node with total frequency of all nodes.
+	*/
+
 	public static void generateAccessProbabilities() {
 		sumOfFirstNnumbers = new double[ numberOfNodes ];
 		frequencyArray = new double[ numberOfNodes ];
@@ -115,6 +122,11 @@ public class OBST_Parallel extends Thread {
 		}
 	}
 	
+	/*
+		This function finds the optimal cost for the binary search tree
+		and also constructs the tree using a serial DP approach (1 thread).		
+	*/	
+
 	public static void serialOBST() {
 		searchCount = new double[ numberOfNodes ][ numberOfNodes ];
 		treeNodes = new Node[ numberOfNodes ][ numberOfNodes ];
@@ -164,6 +176,10 @@ public class OBST_Parallel extends Thread {
 		}
 	}
 
+	/*
+		This method creates and starts the user specified threads to
+		build the optimal search tree parallely.
+	*/
 	public static void parallelOBST() throws InterruptedException {
 		searchCount = new double[ numberOfNodes ][ numberOfNodes ];
 		treeNodes = new Node[ numberOfNodes ][ numberOfNodes ];
@@ -191,6 +207,10 @@ public class OBST_Parallel extends Thread {
 			}
 		}
 	}
+	
+	/*
+		Overrided run method. Each thread works on a specific portion of data.		
+	*/
 
 	public void run() {
 		int row = start;
@@ -235,6 +255,10 @@ public class OBST_Parallel extends Thread {
 			row ++;
 		}
 	}
+	
+	/*
+		A test method to test the serial algorithm
+	*/
 
 	public static void testSerial() {
 		double accessProbabilities2 [] = { 6, 3, 4 };
@@ -251,6 +275,9 @@ public class OBST_Parallel extends Thread {
 		serialOBST();
 	}
 
+	/*
+		A test method to find the OBST parallely
+	*/
 	public static void testParallel() throws InterruptedException {
 		double accessProbabilities2[] = { 6, 3, 4 };
 		accessProbabilities = accessProbabilities2;
@@ -283,6 +310,10 @@ public class OBST_Parallel extends Thread {
 			System.out.println();
 		}
 	}
+
+	/*
+		This method prints the OBST level-wise (level order traversal)
+	*/
 
 	public static void levelOrderTraversal( Node root ) {
 		Queue< Node > q = new LinkedList<>();
